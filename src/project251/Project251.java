@@ -8,6 +8,8 @@ public class Project251 {
         System.out.print("Hi");
         System.out.print("Hey");
         System.out.println("Hello I'm mahaba");
+        System.out.print("hey i am lena");
+        
 
     }
     

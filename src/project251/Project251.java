@@ -42,12 +42,6 @@ public class Project251 extends Menu{
                 case 2: {
                     System.out.print("Enter the item name to order: ");
                     String itemName = input.next();
-                    //MenuItem itemToOrder = m.findItemByName(itemName);
-                    //if (itemToOrder != null) {
-                       // System.out.println("Ordered: " + itemToOrder.getName() + " - $" + itemToOrder.getPrice());
-                    //} else {
-                    //    System.out.println("Item not found in the menu!");
-                   // }
                     break;
                 }
                 case 3: {

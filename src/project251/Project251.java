@@ -19,7 +19,7 @@ public class Project251 extends Menu{
         System.out.println("4: Make Payment");
         System.out.println("5: Exit");
         System.out.println(" ---------------------------------------------------");
-        System.out.print("\nChoose from the menu: ");
+        System.out.print("\nChoose from the options: ");
     }
     
     

@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class Project251 extends Menu{
     
     public static void options() {
-        System.out.println("\n\n***************************");
+        System.out.println("\n\n*****************************");
         System.out.println("****** Restaurant Options *******");
-        System.out.println("*******************************");
+        System.out.println("*********************************");
         System.out.println("1: View Menu Items");
         System.out.println("2: Order");
         System.out.println("3: Reserve Table");

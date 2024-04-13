@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 public class Project251 extends Menu{
     
-    public static void menu() {
+    public static void options() {
         System.out.println("\n\n******************");
-        System.out.println("****** Restaurant Menu *******");
+        System.out.println("****** Restaurant Options *******");
         System.out.println("******************");
         System.out.println("1: View Menu Items");
         System.out.println("2: Order");
@@ -29,35 +29,24 @@ public class Project251 extends Menu{
         
         
       System.out.println("Welcome to the Restaurant!");
-       Menu m = new Menu();
+       Menu menu = new Menu();
        do {
-            menu();
+            options();
             selectedOption = input.nextInt();
 
-            switch (selectedOption) {
-                case 1: {
-                    m.DisplayMenu();
-                    break;
-                }
-                case 2: {
-                    System.out.print("Enter the item name to order: ");
-                    String itemName = input.next();
-                    break;
-                }
-                case 3: {
-                    System.out.println("Table reserved!");
-                    break;
-                }
-                case 4: {
-                    System.out.println("Payment made!");
-                    break;
-                }
-                case 5:
-                    System.out.println("Exiting...");
-                    break;
-                default:
-                    System.out.println("Invalid choice! Please try again.");
-                    break;
+            if (selectedOption == 1) {
+                menu.DisplayMenu();
+            } else if (selectedOption == 2) {
+                System.out.print("Enter the item name to order: ");
+                String itemName = input.next();
+            } else if (selectedOption == 3) {
+                System.out.println("Table reserved!");
+            } else if (selectedOption == 4) {
+                System.out.println("Payment made!");
+            } else if (selectedOption == 5) {
+                System.out.println("Exiting...");
+            } else {
+                System.out.println("Invalid choice! Please try again.");
             }
         } while (selectedOption != 5);
         

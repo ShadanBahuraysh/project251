@@ -9,7 +9,7 @@ import java.util.InputMismatchException;
 
 public class Project251 extends Menu{
     
-    public static void menu() {
+    public static void option() {
         System.out.println("\n\n**");
         System.out.println("****** Restaurant Options *******");
         System.out.println("");
@@ -22,6 +22,10 @@ public class Project251 extends Menu{
         System.out.print("\nChoose from the Options: ");
     }
     
+     public static boolean isTableAvailable(int tableNumber) { // to check table
+   
+                    return true;
+     }
     
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -32,36 +36,33 @@ public class Project251 extends Menu{
        Menu menu = new Menu();
        Order order = new Order();
        do {
-            menu();
+            option();
             selectedOption = input.nextInt();
 
             if (selectedOption == 1) {
                 menu.DisplayMenu();
             } else if (selectedOption == 2) {
-                Boolean condition= false;
-                String itemName="";
-                while(condition==false){
-                System.out.print("Enter the item name to order: ");
-                itemName= input.next();
-                MenuItem ordereditems = menu.findItemByName(itemName);
-                if (ordereditems != null) {
-                    order.addItem(ordereditems);
-                    System.out.println("Ordered: " + ordereditems.getName() + " - $" + ordereditems.getPrice());
-                    System.out.print("Is that all ?");
-                    String YesNo=input.next().toLowerCase();
-                    if(YesNo.equals("no")){
-                    condition=false;
-                    }
-                    else if(YesNo.equals("yes")){
-                    condition=true; 
-                    order.displayOrder();
-                    }
-                } else {
-                    System.out.println("Item not found in the menu!");
-                }
-                }
+                Order.handleOrder(input, menu, order);
             } else if (selectedOption == 3) {
-                System.out.println("Table reserved!");
+                System.out.print("Enter the table number: ");
+                int tableNumber = input.nextInt();
+                System.out.print("Enter the date (MM/DD/YYYY): ");
+                String date = input.next();
+                System.out.print("Enter the number of people: ");
+                int numberOfPeople = input.nextInt();
+                System.out.print("Enter the reservation time: ");
+                String reservationTime = input.next();
+               
+                TableReservation reservation = new TableReservation(tableNumber, date, numberOfPeople, reservationTime);
+                                                
+                if (isTableAvailable(tableNumber)) {
+                   
+                  reservation.reserveTable();
+                  System.out.println("Table " + tableNumber + " reserved for " + numberOfPeople + " people at " + reservationTime);
+                  System.out.println("Table reserved!");
+                } else {
+                  System.out.println("Table " + tableNumber + " is not available for the given date and time.");
+                } 
             } else if (selectedOption == 4) {
                 System.out.println("Payment made!");
             } else if (selectedOption == 5) {
@@ -71,6 +72,9 @@ public class Project251 extends Menu{
             }
         } while (selectedOption != 5);
         
+              
         input.close();
     }
+    
+    
 }

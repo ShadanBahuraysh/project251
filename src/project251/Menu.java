@@ -24,6 +24,10 @@ class MenuItem {
     public double getPrice() {
         return price;
     }
+    
+     public String toString() {
+        return getName() + " $" + getPrice() + " - " + getDescription();
+    }
 }
 
 class Menu {

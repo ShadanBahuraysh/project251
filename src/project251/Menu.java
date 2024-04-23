@@ -1,3 +1,4 @@
+
 package project251;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,18 +52,18 @@ class Menu {
 
     public void DisplayMenu() {
         System.out.println("---------- Menu ----------");
-        displayByCategory("Appetizers", appetizers);
-        displayByCategory("Main Courses", mainCourses);
-        displayByCategory("Desserts", desserts);
+        displayMenuByCategory("Appetizers", appetizers);
+        displayMenuByCategory("Main Courses", mainCourses);
+        displayMenuByCategory("Desserts", desserts);
         }
     
-    private void displayByCategory(String category, List<MenuItem> items) {
+    private void displayMenuByCategory(String category, List<MenuItem> items) {
         System.out.println(category + ":");
         for (MenuItem item : items) {
             System.out.println("- " + item.getName() + " $" + item.getPrice() + " - " + item.getDescription());
         }
     }
-    public MenuItem findItemByName(String itemName) {
+    public MenuItem findMenuItemsByName(String itemName) {
         for (MenuItem item : appetizers) {
             if (item.getName().equalsIgnoreCase(itemName)) {
                 return item;

@@ -23,7 +23,7 @@ public class Project251{
 
         System.out.println("Welcome to Central Restaurant!");
         Menu menu = new Menu();
-        order order = new order();
+        Order order = new Order();
         TableReservationSystem  reservation = new TableReservationSystem();
             TableReservation[] reservations = {
             new TableReservation(1, "05/13/2024", 4, "18:00"),
@@ -39,7 +39,7 @@ public class Project251{
             } else if (selectedOption == 3) {
                 reservation.makeTableReservation(reservations);
             } else if (selectedOption == 4) {
-                //
+                Payment.makePayment(order);
             } else if (selectedOption == 5) {
                 System.out.println("Thank you!");
             } else {

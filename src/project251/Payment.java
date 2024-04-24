@@ -10,7 +10,7 @@ public class Payment {
 
     private static final double TAX_RATE = 0.1; // 10% tax rate
 
-    public static void makePayment(Order order) {
+    public static void makePayment(order order) {
         double subtotal = calculate_Subtotal(order);
         double tax = calculate_Tax(subtotal);
         double total = subtotal + tax;
@@ -31,7 +31,7 @@ public class Payment {
         }
     }
 
-    private static double calculate_Subtotal(Order order) {
+    private static double calculate_Subtotal(order order) {
         double subtotal = 0.0;
         for (MenuItem item : order.getOrderedItems()) {
             subtotal += item.getPrice();

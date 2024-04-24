@@ -23,7 +23,7 @@ public class Project251{
 
         System.out.println("Welcome to Central Restaurant!");
         Menu menu = new Menu();
-        Order order = new Order();
+        order order = new order();
         TableReservationSystem  reservation = new TableReservationSystem();
             TableReservation[] reservations = {
             new TableReservation(1, "05/13/2024", 4, "18:00"),

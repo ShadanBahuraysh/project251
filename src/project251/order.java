@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project251;
-
-import java.util.List;
-import java.util.ArrayList;
 import java.util.Scanner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class order {
    
-private List<MenuItem> itemsOrdered;
+    private List<MenuItem> itemsOrdered;
 
     public order() {
         this.itemsOrdered = new ArrayList<>();
@@ -27,9 +22,10 @@ private List<MenuItem> itemsOrdered;
             displayMenuItem(item);
         }
     }
+    
     public List<MenuItem> getOrderedItems() {
-    return itemsOrdered;
-}
+        return itemsOrdered;
+    }
     
     private void displayMenuItem(MenuItem item) {
         System.out.println("- " + item.toString());
@@ -57,5 +53,13 @@ private List<MenuItem> itemsOrdered;
                 System.out.println("Item not found in the menu!");
             }
         }
+    }
+    
+    public double calculateTotalPrice() {
+        double totalPrice = 0.0;
+        for (MenuItem item : itemsOrdered) {
+            totalPrice += item.getPrice();
+        }
+        return totalPrice;
     }
 }

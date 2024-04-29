@@ -6,6 +6,10 @@ public class Payment {
 
     private static final double TAX_RATE = 0.1; // 10% tax rate
 
+    public static double getTaxRate() {
+        return TAX_RATE;
+    }
+
     public static double makePayment(order order, double paymentAmount) {
         double subtotal = calculateSubtotal(order);
         double tax = calculateTax(subtotal);

@@ -1,4 +1,3 @@
-
 package project251;
 import java.util.Scanner;
 
@@ -24,10 +23,12 @@ public class Project251{
         System.out.println("Welcome to Central Restaurant!");
         Menu menu = new Menu();
         order order = new order();
-        TableReservationSystem  reservation = new TableReservationSystem();
-            TableReservation[] reservations = {
+        TableReservationSystem reservation = new TableReservationSystem();
+        TableReservation[] reservations = {
             new TableReservation(1, "05/13/2024", 4, "18:00"),
-            new TableReservation(2, "06/14/2024", 6, "19:00"),};        
+            new TableReservation(2, "06/14/2024", 6, "19:00")
+        };        
+
         do {
             option();
             selectedOption = input.nextInt();
@@ -39,7 +40,11 @@ public class Project251{
             } else if (selectedOption == 3) {
                 reservation.makeTableReservation(reservations);
             } else if (selectedOption == 4) {
-                Payment.makePayment(order);
+                // Prompt for payment amount
+                System.out.print("Enter payment amount: $");
+                double paymentAmount = input.nextDouble();
+                // Make payment with provided amount
+                Payment.makePayment(order, paymentAmount);
             } else if (selectedOption == 5) {
                 System.out.println("Thank you!");
             } else {
@@ -49,5 +54,4 @@ public class Project251{
 
         input.close();
     }
-
 }

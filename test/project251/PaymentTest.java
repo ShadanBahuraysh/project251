@@ -10,7 +10,7 @@ public class PaymentTest {
 public void testMakePayment_EnoughPayment() {
     order order = new order();
     MenuItem item1 = new MenuItem("Caesar_Salad", "Fresh romaine lettuce with Caesar dressing", 12.00);
-    MenuItem item2 = new MenuItem("Grilled_Salmon", "Grilled Atlantic salmon fillet with lemon butter sauce", 12.00);
+    MenuItem item2 = new MenuItem("Grilled_Salmon", "Grilled Atlantic salmon fillet with lemon butter sauce", 15.00);
     order.addItem(item1);
     order.addItem(item2);
 
@@ -28,7 +28,7 @@ public void testMakePayment_EnoughPayment() {
     public void testMakePayment_InsufficientPayment() {
         order order = new order();
         MenuItem item1 = new MenuItem("Caesar_Salad", "Fresh romaine lettuce with Caesar dressing", 12.00);
-        MenuItem item2 = new MenuItem("Grilled_Salmon", "Grilled Atlantic salmon fillet with lemon butter sauce", 12.00);
+        MenuItem item2 = new MenuItem("Grilled_Salmon", "Grilled Atlantic salmon fillet with lemon butter sauce", 15.00);
         order.addItem(item1);
         order.addItem(item2);
 

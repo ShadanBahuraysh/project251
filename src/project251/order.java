@@ -50,7 +50,7 @@ public class order {
                     order.displayOrder();
                 }
             } else {
-                System.out.println("Item not found in the menu!");
+                throw new IllegalArgumentException("Item not found in the menu!");
             }
         }
     }

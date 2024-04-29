@@ -1,8 +1,7 @@
 package project251;
-import java.util.Scanner;
+import java.util.*;
 
 public class TableReservation {
-
     private int tableNumber;
     private String date;
     private int numberOfPeople;
@@ -15,6 +14,7 @@ public class TableReservation {
         this.date = date;
         this.numberOfPeople = numberOfPeople;
         this.reservationTime = reservationTime;
+        this.status=false;
     }
 
 
@@ -43,7 +43,7 @@ public class TableReservation {
     }
 
     public void cancelReservation() {
-        status = false;
+        this.status = false;
        
     }
 }

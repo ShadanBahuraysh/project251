@@ -16,16 +16,14 @@ public class TableReservationSystem {
         System.out.print("Enter the reservation time: ");
         String reservation_Time = input.next();
         
-        
-       TableReservation reservation = null;
+       TableReservation reservation = new TableReservation(table_Number,date_,number_Of_People,reservation_Time);
         for (TableReservation res : reservations) {
             if (res.getTableNumber() == table_Number) {
                 reservation = res;
                 break;
             }
         }
-
-        if (reservation != null) {
+    
             if (reservation.isAvailable()) {
                 reservation.reserveTable();
                 System.out.println("Table " + table_Number + " reserved for " + number_Of_People + " people at " + reservation_Time);
@@ -36,6 +34,4 @@ public class TableReservationSystem {
         
     }
         
-        
     }
-}

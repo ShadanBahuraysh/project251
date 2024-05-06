@@ -3,8 +3,10 @@ package project251;
 import java.util.List;
 
 public class Payment {
+    
+    
 
-    private static final double TAX_RATE = 0.1; // 10% tax rate
+    static final double TAX_RATE = 0.1; // 10% tax rate
 
     public static double getTaxRate() {
         return TAX_RATE;
@@ -25,7 +27,7 @@ public class Payment {
         }
     }
 
-    private static double calculateSubtotal(order order) {
+    static double calculateSubtotal(order order) {
         double subtotal = 0.0;
         List<MenuItem> orderedItems = order.getOrderedItems();
         for (MenuItem item : orderedItems) {
@@ -34,7 +36,7 @@ public class Payment {
         return subtotal;
     }
 
-    private static double calculateTax(double subtotal) {
+    static double calculateTax(double subtotal) {
         return subtotal * TAX_RATE;
     }
 }

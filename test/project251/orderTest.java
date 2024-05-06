@@ -22,6 +22,7 @@ public class orderTest {
     @Test
     public void testAddItem() {
         // Create an order and add an item
+        System.out.println("testAddItem");
         orderTest = new order();
         MenuItem item = new MenuItem("Burger", "Juicy beef patty with cheese and lettuce", 5.99);
         orderTest.addItem(item);
@@ -33,6 +34,7 @@ public class orderTest {
     @Test
     public void testDisplayOrder() {
         // Redirect System.out to capture output
+        System.out.println("testDisplayOrder");
         ByteArrayInputStream in = new ByteArrayInputStream("yes".getBytes());
         System.setIn(in);
 
@@ -43,14 +45,14 @@ public class orderTest {
         MenuItem item2 = menu.findMenuItemsByName("Grilled_Salmon");
         orderTest.addItem(item1);
         orderTest.addItem(item2);
+        assertNotNull( orderTest.getOrderedItems().size());
 
-        // Display the order and capture output
-        orderTest.displayOrder();
     }
 
     @Test
     public void testMakeOrder() {
         // Prepare menu with some items
+        System.out.println("testMakeOrder");
         Menu menu = new Menu();
         menu.DisplayMenu(); // Display menu for reference
 
@@ -68,6 +70,7 @@ public class orderTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testMakeOrderItemNotFound() {
+        System.out.println("testMakeOrderItemNotFound");
         // Prepare menu with some items
         Menu menu = new Menu();
         menu.DisplayMenu(); // Display menu 
@@ -83,4 +86,18 @@ public class orderTest {
 
     }
 
+    @Test
+    public void testCalculateTotalPrice() {
+        System.out.println("testCalculateTotalPrice");        
+        order order = new order();
+        MenuItem item1 = new MenuItem("Caesar_Salad", "Fresh romaine lettuce with Caesar dressing", 12.00);
+        MenuItem item2 = new MenuItem("Grilled_Salmon", "Grilled Atlantic salmon fillet with lemon butter sauce", 15.00);
+        order.addItem(item1);
+        order.addItem(item2);
+
+        double expectedTotalPrice = 27.00; // 12.00 + 15.00 + 4.50 = 31.50
+        double actualTotalPrice = order.calculateTotalPrice();
+
+        assertEquals(expectedTotalPrice, actualTotalPrice, 0.001);
+    }
 }
